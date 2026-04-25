@@ -207,26 +207,25 @@ export function CharacterCreation() {
               Character Class
             </Label>
             <div className="space-y-2">
-              {classes.map(cls => (
-                <RadioGroupItem 
-                  key={cls.id} 
-                  value={cls.id}
-                  className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer"
-                >
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-lg">{cls.icon}</span>
-                        <span className="font-medium">{cls.name}</span>
-                      </div>
-                      <span className="text-xs text-gray-500 dark:text-gray-400">
-                        {cls.description}
-                      </span>
-                    </div>
-                  </div>
-                  <RadioIndicator className="h-4 w-4" />
-                </RadioGroupItem>
-              ))}
+               {classes.map(cls => (
+                 <RadioGroupItem 
+                   key={cls.id} 
+                   value={cls.id}
+                   className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer"
+                 >
+                   <div className="flex-1">
+                     <div className="flex items-center justify-between">
+                       <div className="flex items-center space-x-2">
+                         <span className="text-lg">{cls.icon}</span>
+                         <span className="font-medium">{cls.name}</span>
+                       </div>
+                       <span className="text-xs text-gray-500 dark:text-gray-400">
+                         {cls.description}
+                       </span>
+                     </div>
+                   </div>
+                 </RadioGroupItem>
+               ))}
             </div>
           </div>
 
@@ -236,48 +235,45 @@ export function CharacterCreation() {
               Background
             </Label>
             <div className="space-y-2">
-              {backgrounds.map(bg => (
-                <RadioGroupItem 
-                  key={bg.id} 
-                  value={bg.id}
-                  className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer"
-                >
-                   <div className="flex-1">
-                     <div className="flex items-center justify-between">
-                       <div className="flex items-center space-x-2">
-                         <span className="text-lg">📜</span>
-                         <span className="font-medium">{bg.name}</span>
-                       </div>
-                       <span className="text-xs text-gray-500 dark:text-gray-400">
-                         {bg.description}
-                       </span>
-                     </div>
-                     {bg.goldBonus && (
-                       <div className="mt-1 text-xs text-green-500 dark:text-green-400">
-                         +{bg.goldBonus} starting gold
-                       </div>
-                     )}
-                     {bg.xpBonus && (
-                       <div className="mt-1 text-xs text-blue-500 dark:text-blue-400">
-                         +{bg.xpBonus} starting XP
-                       </div>
-                     )}
-                     {bg.weaponBonus && (
-                       <div className="mt-1 text-xs text-yellow-500 dark:text-yellow-400">
-                         Starting weapon: {bg.weaponBonus.replace('_', ' ').replace(/\b\w/g, c => c.toUpperCase())}
-                       </div>
-                     )}
-                     {bg.itemBonus && (
-                       <div className="mt-1 text-xs text-purple-500 dark:text-purple-400">
-                         Starting item: {bg.itemBonus.replace('_', ' ').replace(/\b\w/g, c => c.toUpperCase())}
-                       </div>
-                     )}
-                   </div>
-                   <span className="h-4 w-4 flex items-center justify-center">
-                     <Circle className="h-2.5 w-2.5 fill-current text-current" />
-                   </span>
+             {backgrounds.map(bg => (
+                 <RadioGroupItem 
+                   key={bg.id} 
+                   value={bg.id}
+                   className="flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer"
+                 >
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                          <span className="text-lg">📜</span>
+                          <span className="font-medium">{bg.name}</span>
+                        </div>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">
+                          {bg.description}
+                        </span>
+                      </div>
+                      {bg.goldBonus && (
+                        <div className="mt-1 text-xs text-green-500 dark:text-green-400">
+                          +{bg.goldBonus} starting gold
+                        </div>
+                      )}
+                      {bg.xpBonus && (
+                        <div className="mt-1 text-xs text-blue-500 dark:text-blue-400">
+                          +{bg.xpBonus} starting XP
+                        </div>
+                      )}
+                      {bg.weaponBonus && (
+                        <div className="mt-1 text-xs text-yellow-500 dark:text-yellow-400">
+                          Starting weapon: {bg.weaponBonus.replace('_', ' ').replace(/\b\w/g, c => c.toUpperCase())}
+                        </div>
+                      )}
+                      {bg.itemBonus && (
+                        <div className="mt-1 text-xs text-purple-500 dark:text-purple-400">
+                          Starting item: {bg.itemBonus.replace('_', ' ').replace(/\b\w/g, c => c.toUpperCase())}
+                        </div>
+                      )}
+                    </div>
                  </RadioGroupItem>
-              ))}
+               ))}
             </div>
           </div>
 

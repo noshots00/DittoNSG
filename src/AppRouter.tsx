@@ -4,7 +4,6 @@ import { AudioNavigationGuard } from "@/components/AudioNavigationGuard";
 import { DeepLinkHandler } from "@/components/DeepLinkHandler";
 import { MinimizedAudioBar } from "@/components/MinimizedAudioBar";
 import { AudioPlayerProvider } from "@/contexts/AudioPlayerContext";
-import { BlobbiActionsProvider } from "@/blobbi/companion/interaction/BlobbiActionsProvider";
 import { sidebarItemIcon } from "@/lib/sidebarItems";
 import { Toaster } from "./components/ui/toaster";
 import { MainLayout } from "./components/MainLayout";
@@ -139,20 +138,15 @@ function ProfileRedirect() {
 
 export function AppRouter() {
   return (
-    <AudioPlayerProvider>
-      <BrowserRouter>
-        <Toaster />
-        <VersionCheck />
-        <MinimizedAudioBar />
-        <AudioNavigationGuard />
-        <DeepLinkHandler />
-        <ScrollToTop />
-        <BlobbiActionsProvider>
-          <Suspense fallback={null}>
-            <BlobbiCompanionLayer />
-          </Suspense>
-        </BlobbiActionsProvider>
-        <Routes>
+         <AudioPlayerProvider>
+       <BrowserRouter>
+         <Toaster />
+         <VersionCheck />
+         <MinimizedAudioBar />
+         <AudioNavigationGuard />
+         <DeepLinkHandler />
+         <ScrollToTop />
+         <Routes>
           {/* Auto-follow deep link: fullscreen immersive (no sidebars/nav) */}
           <Route path="/follow/:npub" element={<FollowPage />} />
 
