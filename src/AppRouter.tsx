@@ -13,6 +13,7 @@ import { VersionCheck } from "./components/VersionCheck";
 import { useCurrentUser } from "./hooks/useCurrentUser";
 import { useProfileUrl } from "./hooks/useProfileUrl";
 import { getExtraKindDef } from "./lib/extraKinds";
+import { RPGInterface } from "@/components/rpg/RPGInterface";
 
 // Critical-path pages: eagerly loaded (landing + fallback)
 import Index from "./pages/Index";
@@ -280,6 +281,8 @@ export function AppRouter() {
 
             {/* Callback target for remote signers (e.g. Amber, Primal) after NIP-46 approval */}
             <Route path="/remoteloginsuccess" element={<RemoteLoginSuccessPage />} />
+            {/* No Stranger Game RPG Interface */}
+            <Route path="/game" element={<RPGInterface />} />
             {/* NIP-19 route for npub1, note1, naddr1, nevent1, nprofile1 */}
             <Route path="/:nip19" element={<NIP19Page />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
